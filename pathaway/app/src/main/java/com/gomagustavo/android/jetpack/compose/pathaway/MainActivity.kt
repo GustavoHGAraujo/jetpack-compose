@@ -13,17 +13,20 @@ import androidx.compose.ui.draw.clip
 import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
+import com.gomagustavo.android.jetpack.compose.pathaway.ui.theme.JetpackComposePathawayTheme
 
 class MainActivity : ComponentActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContent {
-            MessageCard(
-                Message(
-                    "Android",
-                    "Jetpack Compose"
+            JetpackComposePathawayTheme {
+                MessageCard(
+                    Message(
+                        "Android",
+                        "Jetpack Compose"
+                    )
                 )
-            )
+            }
         }
     }
 }
@@ -61,10 +64,12 @@ fun MessageCard(message: Message) {
 @Preview
 @Composable
 fun PreviewMessageCard() {
-    MessageCard(
-        message = Message(
-            author = "Colleague",
-            body = "Hey, take a look at Jetpack Compose, it's great!"
+    JetpackComposePathawayTheme {
+        MessageCard(
+            message = Message(
+                author = "Colleague",
+                body = "Hey, take a look at Jetpack Compose, it's great!"
+            )
         )
-    )
+    }
 }
