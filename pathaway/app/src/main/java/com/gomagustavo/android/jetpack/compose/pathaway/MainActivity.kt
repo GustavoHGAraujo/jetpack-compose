@@ -8,6 +8,7 @@ import androidx.compose.foundation.border
 import androidx.compose.foundation.layout.*
 import androidx.compose.foundation.shape.CircleShape
 import androidx.compose.material.MaterialTheme
+import androidx.compose.material.Surface
 import androidx.compose.material.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
@@ -67,10 +68,16 @@ fun MessageCard(message: Message) {
 
             Spacer(modifier = Modifier.width(4.dp))
 
-            Text(
-                text = message.body,
-                style = MaterialTheme.typography.body2
-            )
+            Surface(
+                shape = MaterialTheme.shapes.medium,
+                elevation = 1.dp
+            ) {
+                Text(
+                    text = message.body,
+                    modifier = Modifier.padding(all = 4.dp),
+                    style = MaterialTheme.typography.body2
+                )
+            }
         }
     }
 }
